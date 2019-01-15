@@ -27,6 +27,12 @@ SET_SOURCE_FILES_PROPERTIES(
 
 file(COPY ${public_headers} DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/include/Cryptor")
 
+message(${CMAKE_CURRENT_BINARY_DIR})
+
 include_directories("${CMAKE_CURRENT_BINARY_DIR}/include" ${core_includes})
 
+message(${core_includes})
+
 add_library(Cryptor ${core_files})
+
+target_include_directories(Cryptor PUBLIC ${CMAKE_SOURCE_DIR} )

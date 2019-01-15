@@ -15,3 +15,6 @@ set(core_includes
         "${CMAKE_CURRENT_SOURCE_DIR}/core/abstract"
         "${CMAKE_CURRENT_SOURCE_DIR}/core/md5"
 )
+
+message("core_includes")
+message(${core_includes})

@@ -21,4 +21,6 @@ add_executable(cryptor main.cpp src/Cryptor.h src/core/CryptorCore.h src/core/ab
 
 target_link_libraries(cryptor Cryptor)
 
+message("CMAKE Source Dir" ${CMAKE_SOURCE_DIR})
+
 add_subdirectory (src)
