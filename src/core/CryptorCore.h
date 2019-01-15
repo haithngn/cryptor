@@ -5,6 +5,6 @@
 #ifndef CRYPTOR_CRYPTORCORE_H
 #define CRYPTOR_CRYPTORCORE_H
 
-#include <Cryptor/CryptorMD5.h>
+#include <Cryptor/MD5Encryptor.h>
 
 #endif //CRYPTOR_CRYPTORCORE_H

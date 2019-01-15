@@ -17,6 +17,8 @@ ELSEIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 ENDIF()
 
-add_subdirectory (src)
+add_executable(cryptor main.cpp src/Cryptor.h src/core/CryptorCore.h src/core/abstract/MD5Encryptor.h src/core/md5/MD5EncryptorImpl.h src/core/md5/MD5EncryptorImpl.cpp)
 
-add_executable(cryptor main.cpp src/Cryptor.h src/core/CryptorCore.h src/core/md5/CryptorMD5.h src/core/md5/CryptorMD5Generator.cpp src/core/md5/CryptorMD5Generator.h)
+target_link_libraries(cryptor Cryptor)
+
+add_subdirectory (src)

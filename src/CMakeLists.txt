@@ -17,6 +17,7 @@ file(GLOB_RECURSE
         *.h
         *.m
         *.c
+        *.cpp
         )
 
 SET_SOURCE_FILES_PROPERTIES(
@@ -24,19 +25,8 @@ SET_SOURCE_FILES_PROPERTIES(
         PROPERTIES LANGUAGE C
 )
 
-file(COPY
-        ${public_headers}
+file(COPY ${public_headers} DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/include/Cryptor")
 
-        DESTINATION
-        "${CMAKE_CURRENT_BINARY_DIR}/include/Cryptor"
-        )
+include_directories("${CMAKE_CURRENT_BINARY_DIR}/include" ${core_includes})
 
-include_directories("${CMAKE_CURRENT_BINARY_DIR}/include"
-        ${core_includes}
-        ${objc_includes}
-        )
-
-add_library(Cryptor
-        ${core_files}
-#        ${objc_files}
-        )
+add_library(Cryptor ${core_files})
